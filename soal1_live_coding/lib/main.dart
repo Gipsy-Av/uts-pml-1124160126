@@ -52,6 +52,7 @@ class ProfilePage extends StatelessWidget {
                 radius: 50,
                 child: Icon(Icons.person, size: 50),
               ),
+              const SizedBox(height: 16),
               Text(
                 'Hanif Iqbal Bagastyo',
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -59,11 +60,13 @@ class ProfilePage extends StatelessWidget {
                     ),
                 textAlign: TextAlign.center,
               ),
+              const SizedBox(height: 6),
               Text(
                 'NIM: 2401010123',
                 style: Theme.of(context).textTheme.bodyMedium,
                 textAlign: TextAlign.center,
               ),
+              const SizedBox(height: 4),
               Text(
                 'Teknik Informatika - Software Engineering',
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
