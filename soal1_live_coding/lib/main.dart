@@ -74,7 +74,44 @@ class ProfilePage extends StatelessWidget {
                     ),
                 textAlign: TextAlign.center,
               ),
-
+              const SizedBox(height: 24),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Kontak',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Card(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: Column(
+                    children: [
+                      InfoTile(
+                        icon: Icons.email,
+                        label: 'Email',
+                        value: 'hanifbagastyo286@gmail.com',
+                      ),
+                      InfoTile(
+                        icon: Icons.phone,
+                        label: 'Nomor HP',
+                        value: '+62 857-1132-8407',
+                      ),
+                      InfoTile(
+                        icon: Icons.school,
+                        label: 'Kelas',
+                        value: 'TI 24M SE',
+                      ),
+                      InfoTile(
+                        icon: Icons.code,
+                        label: 'Akun GitHub',
+                        value: 'github.com/Gipsy-Av',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
 
 class InfoTile extends StatelessWidget {
   final IconData icon;
