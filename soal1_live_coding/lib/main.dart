@@ -112,6 +112,39 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Keahlian / Hobi',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Card(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: Column(
+                    children: [
+                      InfoTile(
+                        icon: Icons.phone_android,
+                        label: 'Mobile Development',
+                        value: 'Flutter & Dart',
+                      ),
+                      InfoTile(
+                        icon: Icons.web,
+                        label: 'Frontend Web',
+                        value: 'HTML, CSS, JavaScript, React, Tailwind, Bootstrap',
+                      ),
+                      InfoTile(
+                        icon: Icons.palette,
+                        label: 'Hobi',
+                        value: 'Badminton & Menonton Film',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
 
 class InfoTile extends StatelessWidget {
   final IconData icon;
