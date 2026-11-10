@@ -22,3 +22,24 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+ 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+        title: const Text('Profil Mahasiswa'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Menu Informasi ditekan')),
+              );
+            },
+          ),
+        ],
+      ),
