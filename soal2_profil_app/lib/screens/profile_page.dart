@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/profile.dart';
+import '../widgets/info_tile.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -74,7 +75,48 @@ class _ProfilePageState extends State<ProfilePage> {
                   textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Informasi Kontak',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 8),
+              Card(
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  child: Column(
+                    children: [
+                      InfoTile(
+                        icon: Icons.email_outlined,
+                        label: 'Email',
+                        value: _profile.email,
+                      ),
+                      const Divider(height: 1, indent: 16, endIndent: 16),
+                      InfoTile(
+                        icon: Icons.phone_outlined,
+                        label: 'Nomor HP / WhatsApp',
+                        value: _profile.hp,
+                      ),
+                      const Divider(height: 1, indent: 16, endIndent: 16),
+                      InfoTile(
+                        icon: Icons.code_rounded,
+                        label: 'Akun GitHub',
+                        value: _profile.github,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
