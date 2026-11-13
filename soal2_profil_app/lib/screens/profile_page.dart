@@ -13,6 +13,8 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profil Mahasiswa'),
@@ -23,8 +25,15 @@ class _ProfilePageState extends State<ProfilePage> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              // Bagian kepala profil dan informasi akan ditambahkan bertahap
+            children: [
+              Center(
+                child: CircleAvatar(
+                  radius: 55,
+                  backgroundColor: theme.colorScheme.primaryContainer,
+                  backgroundImage: AssetImage(_profile.imagePath),
+                ),
+              ),
+              const SizedBox(height: 16),
             ],
           ),
         ),
