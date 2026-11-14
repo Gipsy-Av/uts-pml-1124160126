@@ -94,6 +94,30 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   },
                 ),
                 const SizedBox(height: 16),
+                TextFormField(
+                  controller: _hpController,
+                  keyboardType: TextInputType.phone,
+                  decoration: const InputDecoration(
+                    labelText: 'Nomor HP / WhatsApp',
+                    prefixIcon: Icon(Icons.phone_outlined),
+                    border: OutlineInputBorder(),
+                    hintText: '08xxxxxxxxxx',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Nomor HP wajib diisi';
+                    }
+                    final cleanNumber = value.trim();
+                    if (!RegExp(r'^[0-9]+$').hasMatch(cleanNumber)) {
+                      return 'Nomor HP hanya boleh berisi angka';
+                    }
+                    if (cleanNumber.length < 10 || cleanNumber.length > 13) {
+                      return 'Nomor HP harus berjumlah 10 - 13 digit';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
               ],
             ),
           ),
