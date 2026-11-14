@@ -57,10 +57,24 @@ class _EditProfilePageState extends State<EditProfilePage> {
           padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                SizedBox(height: 8),
+                TextFormField(
+                  controller: _namaController,
+                  decoration: const InputDecoration(
+                    labelText: 'Nama Lengkap',
+                    prefixIcon: Icon(Icons.person_outline),
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Nama lengkap wajib diisi';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
               ],
             ),
           ),
