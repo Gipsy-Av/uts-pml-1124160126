@@ -118,6 +118,68 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   },
                 ),
                 const SizedBox(height: 16),
+                TextFormField(
+                  controller: _prodiController,
+                  decoration: const InputDecoration(
+                    labelText: 'Program Studi',
+                    prefixIcon: Icon(Icons.school_outlined),
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Program studi wajib diisi';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _kelasController,
+                  decoration: const InputDecoration(
+                    labelText: 'Kelas',
+                    prefixIcon: Icon(Icons.class_outlined),
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Kelas wajib diisi';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _githubController,
+                  decoration: const InputDecoration(
+                    labelText: 'Akun GitHub',
+                    prefixIcon: Icon(Icons.code_rounded),
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Akun GitHub wajib diisi';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _bioController,
+                  maxLines: 3,
+                  decoration: const InputDecoration(
+                    labelText: 'Bio Singkat',
+                    prefixIcon: Icon(Icons.info_outline),
+                    border: OutlineInputBorder(),
+                    alignLabelWithHint: true,
+                  ),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Bio wajib diisi';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 24),
               ],
             ),
           ),
