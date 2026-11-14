@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
+import 'edit_profile_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -12,6 +13,10 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   Profile _profile = Profile.defaultProfile();
 
+  Future<void> _navigateToEditProfile() async {
+    // Navigasi ke halaman edit profil
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -20,6 +25,13 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         title: const Text('Profil Mahasiswa'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.edit_outlined),
+            tooltip: 'Edit Profil',
+            onPressed: _navigateToEditProfile,
+          ),
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -53,7 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               const SizedBox(height: 4),
               Text(
-                '${_profile.prodi} â€¢ ${_profile.kelas}',
+                '${_profile.prodi} | ${_profile.kelas}',
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: theme.colorScheme.onSurfaceVariant,
                 ),
