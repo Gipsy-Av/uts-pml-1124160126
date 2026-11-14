@@ -75,6 +75,25 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   },
                 ),
                 const SizedBox(height: 16),
+                TextFormField(
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                    prefixIcon: Icon(Icons.email_outline),
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Email wajib diisi';
+                    }
+                    if (!value.contains('@') || !value.contains('.')) {
+                      return 'Format email tidak valid (contoh: user@gmail.com)';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
               ],
             ),
           ),
