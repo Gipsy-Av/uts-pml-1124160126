@@ -52,8 +52,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
         title: const Text('Edit Profil'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text('Form Edit Profil'),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(height: 8),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
