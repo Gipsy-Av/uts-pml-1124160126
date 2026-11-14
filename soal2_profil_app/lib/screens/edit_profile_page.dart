@@ -45,6 +45,21 @@ class _EditProfilePageState extends State<EditProfilePage> {
     super.dispose();
   }
 
+  void _simpanData() {
+    if (_formKey.currentState!.validate()) {
+      final updatedProfile = widget.profile.copyWith(
+        nama: _namaController.text.trim(),
+        prodi: _prodiController.text.trim(),
+        kelas: _kelasController.text.trim(),
+        bio: _bioController.text.trim(),
+        email: _emailController.text.trim(),
+        hp: _hpController.text.trim(),
+        github: _githubController.text.trim(),
+      );
+      Navigator.pop(context, updatedProfile);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -180,6 +195,18 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   },
                 ),
                 const SizedBox(height: 24),
+                ElevatedButton.icon(
+                  onPressed: _simpanData,
+                  icon: const Icon(Icons.save_rounded),
+                  label: const Text('Simpan Perubahan'),
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
               ],
             ),
           ),
