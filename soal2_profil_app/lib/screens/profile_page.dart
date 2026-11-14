@@ -14,7 +14,25 @@ class _ProfilePageState extends State<ProfilePage> {
   Profile _profile = Profile.defaultProfile();
 
   Future<void> _navigateToEditProfile() async {
-    // Navigasi ke halaman edit profil
+    final result = await Navigator.push<Profile>(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditProfilePage(profile: _profile),
+      ),
+    );
+
+    if (result != null && mounted) {
+      setState(() {
+        _profile = result;
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Profil berhasil diperbarui!'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }
   }
 
   @override
