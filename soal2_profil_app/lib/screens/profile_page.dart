@@ -51,6 +51,26 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: theme.colorScheme.primary,
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage(_profile.imagePath),
+              ),
+              accountName: Text(
+                _profile.nama,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              accountEmail: Text(_profile.email),
+            ),
+          ],
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
