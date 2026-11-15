@@ -30,6 +30,29 @@ class AboutPage extends StatelessWidget {
       },
     ];
 
+    final riwayatPendidikan = [
+      {
+        'jenjang': 'S1 Teknik Informatika (Software Engineering)',
+        'institusi': 'Institut Teknologi dan Bisnis Bina Sarana Global',
+        'periode': '2024 - Sekarang',
+      },
+      {
+        'jenjang': 'Sekolah Menengah Atas (SMA)',
+        'institusi': 'SMAN 11 Kota Tangerang',
+        'periode': '2021 - 2024',
+      },
+      {
+        'jenjang': 'Sekolah Menengah Pertama (SMP)',
+        'institusi': 'SMPN 08 Kota Tangerang',
+        'periode': '2018 - 2021',
+      },
+      {
+        'jenjang': 'Sekolah Dasar (SD)',
+        'institusi': 'SDN Gandasari 2 Kota Tangerang',
+        'periode': '2012 - 2018',
+      },
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tentang Saya'),
@@ -63,9 +86,35 @@ class AboutPage extends StatelessWidget {
                   subtitle: Text(item['deskripsi'] as String),
                 ),
               )),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
+          Text(
+            'Riwayat Pendidikan',
+            style: theme.textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: theme.colorScheme.primary,
+            ),
+          ),
+          const SizedBox(height: 8),
+          ...riwayatPendidikan.map((item) => Card(
+                elevation: 1.5,
+                margin: const EdgeInsets.only(bottom: 8.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: theme.colorScheme.secondaryContainer,
+                    child: Icon(Icons.school_rounded,
+                        color: theme.colorScheme.secondary),
+                  ),
+                  title: Text(item['jenjang'] as String,
+                      style: const TextStyle(fontWeight: FontWeight.w600)),
+                  subtitle: Text('${item['institusi']}\n(${item['periode']})'),
+                ),
+              )),
         ],
       ),
     );
   }
 }
+
