@@ -147,9 +147,15 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
+              const SizedBox(height: 80),
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _navigateToEditProfile,
+        icon: const Icon(Icons.edit_rounded),
+        label: const Text('Edit Profil'),
       ),
     );
   }
