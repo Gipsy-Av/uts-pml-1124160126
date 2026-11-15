@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
+import '../main.dart';
 import 'edit_profile_page.dart';
 import 'about_page.dart';
 
@@ -85,6 +86,24 @@ class _ProfilePageState extends State<ProfilePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const AboutPage()),
+                );
+              },
+            ),
+            const Divider(),
+            ValueListenableBuilder<ThemeMode>(
+              valueListenable: themeModeNotifier,
+              builder: (context, currentMode, _) {
+                final isDarkMode = currentMode == ThemeMode.dark;
+                return SwitchListTile(
+                  secondary: Icon(
+                    isDarkMode ? Icons.dark_mode_rounded : Icons.light_mode_rounded,
+                  ),
+                  title: const Text('Mode Gelap'),
+                  value: isDarkMode,
+                  onChanged: (bool value) {
+                    themeModeNotifier.value =
+                        value ? ThemeMode.dark : ThemeMode.light;
+                  },
                 );
               },
             ),
