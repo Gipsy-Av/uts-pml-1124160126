@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
 import 'edit_profile_page.dart';
+import 'about_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -67,6 +68,25 @@ class _ProfilePageState extends State<ProfilePage> {
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               accountEmail: Text(_profile.email),
+            ),
+            ListTile(
+              leading: const Icon(Icons.person_rounded),
+              title: const Text('Profil Saya'),
+              selected: true,
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.info_rounded),
+              title: const Text('Tentang Saya'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AboutPage()),
+                );
+              },
             ),
           ],
         ),
