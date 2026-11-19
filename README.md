@@ -15,7 +15,7 @@ Repository Ujian Tengah Semester (UTS) mata kuliah Pemrograman Mobile Lanjutan (
 ---
 
 ## Link Video Presentasi YouTube
-- **URL Video**: [Link Video Demo YouTube UTS PML](https://youtu.be/placeholder-uts-pml)
+- **URL Video**: https://youtu.be/OqSobWJH_6g
 - **Judul Video**: UTS PML – Aplikasi Profil – Hanif Iqbal Bagastyo – 1124160126
 
 ---
